@@ -33,6 +33,10 @@ mongoose.connect(URL, {
     console.error("MongoDB connection failed:", err.message);
 });
 
+const studentRouter = require("./routes/students.js");
+ // http://localhost:8070/student
+app.use("/student", studentRouter);
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is up and running on port number: ${PORT}`);
